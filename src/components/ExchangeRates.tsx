@@ -48,7 +48,7 @@ export const ExchangeRates = ({
   if (exchangeRateQuery.isLoading) {
     return (
       <Card>
-        <Skeleton loading={true}></Skeleton>
+        <Skeleton loading={true} />
       </Card>
     );
   }
@@ -58,8 +58,8 @@ export const ExchangeRates = ({
     .filter((unit) => unit.exchangeRate)
     .filter(
       (unit) =>
-        unit.currency.toLocaleLowerCase().indexOf(search) !== -1 ||
-        (unit.nameI18N ?? "").toLocaleLowerCase().indexOf(search) !== -1,
+        unit.currency.toLocaleLowerCase().includes(search) ||
+        (unit.nameI18N ?? "").toLocaleLowerCase().includes(search),
     );
 
   return (
