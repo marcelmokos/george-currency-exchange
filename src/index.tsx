@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {ReactQueryClientProvider} from "./hooks/QueryClientContext";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 ReactDOM.render(
   <React.StrictMode>
     <ReactQueryClientProvider>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ReactQueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root"),

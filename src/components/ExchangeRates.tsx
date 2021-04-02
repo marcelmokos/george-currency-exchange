@@ -45,6 +45,10 @@ export const ExchangeRates = ({
 }: Props) => {
   const {search, exchangeRateQuery} = useExchangeRate();
 
+  if (exchangeRateQuery.error) {
+    throw exchangeRateQuery.error;
+  }
+
   if (exchangeRateQuery.isLoading) {
     return (
       <Card>
