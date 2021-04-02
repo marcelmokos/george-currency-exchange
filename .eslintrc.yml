@@ -1,0 +1,29 @@
+---
+extends:
+  - "react-app"
+  - "plugin:jest/recommended"
+
+rules:
+  "no-console": warn
+  "@typescript-eslint/camelcase": off
+  "@typescript-eslint/consistent-type-assertions": off
+  "@typescript-eslint/interface-name-prefix": off
+  "@typescript-eslint/no-empty-interface": off
+  "no-prototype-builtins": off
+  "react/prefer-stateless-function": off
+  "react/no-children-prop": off
+  "@typescript-eslint/no-unused-vars": off
+  "no-redeclare": "off"
+  "@typescript-eslint/no-redeclare": off
+  "jest/no-disabled-tests": off
+  "import/no-extraneous-dependencies":
+    - error
+    - devDependencies:
+        - "prettier.config.js"
+        - "**/storybook/**"
+        - "**/story.*"
+        - "**/*.story.*"
+        - "**/*.test.*"
+        - "**/*.spec.*"
+        - "**/reportWebVitals.ts"
+        - "**/setupTests.ts"
